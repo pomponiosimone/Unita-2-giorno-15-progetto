@@ -26,19 +26,19 @@ function fetchProductDetails(productId) {
     })
     .then(product => {
       const productDetails = `
-          <div class="card">
-            <h5 class="card-title">${product.name}</h5>
-            <p class="card-text">${product.description}</p>
-            <p class="card-text"><strong>Brand:</strong> ${product.brand}</p>
-            <p class="card-text"><strong>Price:</strong> $${product.price}</p>
-            <p class="card-text"><strong>ID:</strong> ${product._id}</p>
-            <p class="card-text"><strong>Created At:</strong> ${new Date(
-              product.createdAt
-            ).toLocaleString("it-IT")}</p>
-            <p class="card-text"><strong>Updated At:</strong> ${new Date(
-              product.updatedAt
-            ).toLocaleString("it-IT")}</p>
-          </div>
+            <ul>   <h4 class="fs-5 my-4">Details</h4>
+    <li><strong>Name:</strong> ${product.name}</li>
+    <li><strong>Description:</strong> ${product.description}</li>
+    <li><strong>Brand:</strong> ${product.brand}</li>
+    <li><strong>Price:</strong> $${product.price}</li>
+    <li><strong>ID:</strong> ${product._id}</li>
+    <li><strong>Created At:</strong> ${new Date(
+      product.createdAt
+    ).toLocaleString("it-IT")}</li>
+    <li><strong>Updated At:</strong> ${new Date(
+      product.updatedAt
+    ).toLocaleString("it-IT")}</li>
+  </ul>
         `;
       document.getElementById("product-details").innerHTML = productDetails;
     })
